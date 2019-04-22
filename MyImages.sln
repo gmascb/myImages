@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyImages", "MyImages\MyImages.csproj", "{EAA56C3B-C337-445E-9F54-2356A03B10FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyImagesUnitTest", "MyImagesUnitTest\MyImagesUnitTest.csproj", "{A36DE0A6-A489-483E-8949-C52465C4A8A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAA56C3B-C337-445E-9F54-2356A03B10FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAA56C3B-C337-445E-9F54-2356A03B10FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAA56C3B-C337-445E-9F54-2356A03B10FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAA56C3B-C337-445E-9F54-2356A03B10FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A36DE0A6-A489-483E-8949-C52465C4A8A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A36DE0A6-A489-483E-8949-C52465C4A8A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A36DE0A6-A489-483E-8949-C52465C4A8A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A36DE0A6-A489-483E-8949-C52465C4A8A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35F51F3D-1506-4034-B831-F59B7F0EF5FB}
+	EndGlobalSection
+EndGlobal
