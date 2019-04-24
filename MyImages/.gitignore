@@ -1,2 +1,6 @@
 .vs
 .git
+.MyImages/bin
+.MyImages/obj
+.MyImagesUnitTest/obj
+.MyImagesUnitTest/bin
