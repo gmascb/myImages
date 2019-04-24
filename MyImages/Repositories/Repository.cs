@@ -45,7 +45,7 @@ namespace MyImages.Repository
             return _dbSet.Where(predicate);
         }
 
-        public T FindById(int id)
+        public T FindById(string id)
         {
             return _dbSet.Find(id);
         }

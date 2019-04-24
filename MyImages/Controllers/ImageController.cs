@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -25,7 +28,7 @@ namespace MyImages.Controllers
         }
 
         // GET: Images/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
             return View(_dao.Repository.FindById(id));
         }
@@ -39,11 +42,21 @@ namespace MyImages.Controllers
         // POST: Images/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ImageModel image)
+        public ActionResult Create(ImageModel ModelOnly, IFormFile Image)
         {
+            var arquivo = Image;
+
             try
             {
-                _dao.Repository.Add(image);
+                if (arquivo.Length > 0)
+                {
+                    using (var stream = new MemoryStream())
+                    {
+                        arquivo.CopyToAsync(stream);
+                        ModelOnly.Image = stream.ToArray();
+                    }
+                }
+                _dao.Repository.Add(ModelOnly);
                 _dao.Commit();
 
                 return RedirectToAction(nameof(Index));
@@ -55,7 +68,7 @@ namespace MyImages.Controllers
         }
 
         // GET: Images/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
             return View(_dao.Repository.FindById(id));
         }
@@ -63,7 +76,7 @@ namespace MyImages.Controllers
         // POST: Images/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, ImageModel image)
+        public ActionResult Edit(string id, ImageModel image)
         {
             try
             {
@@ -72,14 +85,14 @@ namespace MyImages.Controllers
                 _dao.Commit();
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception e)
             {
                 return View();
             }
         }
 
         // GET: Images/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
             return View(_dao.Repository.FindById(id));
         }
@@ -87,7 +100,7 @@ namespace MyImages.Controllers
         // POST: Images/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, ImageModel image)
+        public ActionResult Delete(string id, ImageModel image)
         {
             try
             {

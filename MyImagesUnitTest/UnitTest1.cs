@@ -3,16 +3,16 @@ using Xunit;
 
 namespace MyImagesUnitTest
 {
-    [TestClass]
+    //[TesClass]
     public class UnitTest1
     {
-        [Before]
+        //[TestInitialize()]
         public void TestInitialize()
         {
 
         }
 
-        [Test]
+        //[TestMethod]
         public void test1()
         {
 
