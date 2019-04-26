@@ -1,36 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Printing;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MyImages.Dao;
+using MyImages.Uow;
 using MyImages.Models;
+using MyImages.Services;
 
 namespace MyImages.Controllers
 {
     public class ImageController : Controller
     {
-        ImageDao _dao;
+        ImageUow _uow;
+        public IImageServices _service = new ImageService();
+            
 
         public ImageController()
         {
-            this._dao = new ImageDao();
+            this._uow = new ImageUow();
         }
 
         // GET: Images
         public ActionResult Index()
         {
-            return View(_dao.Repository.FindAll());
+            return View(_uow.Repository.FindAll());
         }
 
         // GET: Images/Details/5
         public ActionResult Details(string id)
         {
-            return View(_dao.Repository.FindById(id));
+            return View(_uow.Repository.FindById(id));
         }
 
         // GET: Images/Create
@@ -42,35 +39,42 @@ namespace MyImages.Controllers
         // POST: Images/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ImageModel ModelOnly, IFormFile Image)
+        public ActionResult Create(ImageModel ImageModel, IFormFile Image)
         {
-            var arquivo = Image;
-
-            try
+            if (_service.ValidNumberOfImagesUploaded(_uow))
             {
-                if (arquivo.Length > 0)
+                if (_service.ValidPngFile(Image))
                 {
-                    using (var stream = new MemoryStream())
+                    try
                     {
-                        arquivo.CopyToAsync(stream);
-                        ModelOnly.Image = stream.ToArray();
+                        _service.BuildImagesByteArray(ImageModel, Image, _service);
+                        _uow.Repository.Add(ImageModel);
+                        _uow.Commit();
+
+                        return RedirectToAction(nameof(Index));
+                    }
+                    catch
+                    {
+                        return RedirectToAction(nameof(Index));
                     }
                 }
-                _dao.Repository.Add(ModelOnly);
-                _dao.Commit();
-
+                else
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+            }
+            else
+            {
                 return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
         }
+
+
 
         // GET: Images/Edit/5
         public ActionResult Edit(string id)
         {
-            return View(_dao.Repository.FindById(id));
+            return View(_uow.Repository.FindById(id));
         }
 
         // POST: Images/Edit/5
@@ -81,8 +85,8 @@ namespace MyImages.Controllers
             try
             {
 
-                _dao.Repository.Edit(image);
-                _dao.Commit();
+                _uow.Repository.Edit(image);
+                _uow.Commit();
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception e)
@@ -94,7 +98,7 @@ namespace MyImages.Controllers
         // GET: Images/Delete/5
         public ActionResult Delete(string id)
         {
-            return View(_dao.Repository.FindById(id));
+            return View(_uow.Repository.FindById(id));
         }
 
         // POST: Images/Delete/5
@@ -104,8 +108,8 @@ namespace MyImages.Controllers
         {
             try
             {
-                this._dao.Repository.Remove(this._dao.Repository.FindById(id));
-                this._dao.Commit();
+                this._uow.Repository.Remove(this._uow.Repository.FindById(id));
+                this._uow.Commit();
                 return RedirectToAction(nameof(Index));
             }
             catch

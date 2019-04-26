@@ -4,3 +4,5 @@
 .MyImages/obj
 .MyImagesUnitTest/obj
 .MyImagesUnitTest/bin
+*.dll
+*.pdb

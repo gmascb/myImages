@@ -7,9 +7,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MyImages.Dao
+namespace MyImages.Uow
 {
-    public class ImageDao : DbContext
+    public class ImageUow : DbContext
     {
         public ContextApp context = new ContextApp();
         public Repository<ImageModel> _repository;

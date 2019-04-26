@@ -1,0 +1,14 @@
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\obj\Debug\netcoreapp2.1\MyImagesUnitTest.csprojAssemblyReference.cache
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\obj\Debug\netcoreapp2.1\MyImagesUnitTest.csproj.CoreCompileInputs.cache
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\obj\Debug\netcoreapp2.1\MyImagesUnitTest.AssemblyInfoInputs.cache
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\obj\Debug\netcoreapp2.1\MyImagesUnitTest.AssemblyInfo.cs
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.1\MyImagesUnitTest.deps.json
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.1\MyImagesUnitTest.runtimeconfig.json
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.1\MyImagesUnitTest.runtimeconfig.dev.json
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.1\MyImagesUnitTest.dll
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.1\MyImagesUnitTest.pdb
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\obj\Debug\netcoreapp2.1\MyImagesUnitTest.dll
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\obj\Debug\netcoreapp2.1\MyImagesUnitTest.pdb
