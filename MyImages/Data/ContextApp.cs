@@ -27,7 +27,6 @@ namespace MyImages.Data
                    .SetBasePath(Directory.GetCurrentDirectory())
                    .AddJsonFile("appsettings.json")
                    .Build();
-                //var connectionString = configuration.GetConnectionString("DbCoreConnectionString");
 
                 var connectionString = configuration.GetValue(typeof(string), "DbCoreConnectionString");
 

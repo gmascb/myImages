@@ -12,3 +12,14 @@ C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.
 C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.1\MyImagesUnitTest.pdb
 C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\obj\Debug\netcoreapp2.1\MyImagesUnitTest.dll
 C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\obj\Debug\netcoreapp2.1\MyImagesUnitTest.pdb
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.1\MyImages.Views.dll
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.1\MyImages.Views.pdb
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Http.dll
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.1\MyImages.dll
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.1\MyImages.pdb
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Http.xml
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\obj\Debug\netcoreapp2.1\MyImagesUnitTest.csproj.CopyComplete
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\gmbarbosa\source\repos\MyImages\MyImagesUnitTest\bin\Debug\netcoreapp2.1\pt-BR\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll

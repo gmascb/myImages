@@ -10,7 +10,7 @@ namespace MyImages.Controllers
     public class ImageController : Controller
     {
         ImageUow _uow;
-        public IImageServices _service = new ImageService();
+        public IImageServices _service = new ImageServices();
             
 
         public ImageController()

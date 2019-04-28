@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MyImages.Data;
+using MyImages.Models;
 using MyImages.Repositories;
 using System;
 using System.Collections.Generic;
@@ -9,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace MyImages.Repository
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public class IRepository<T> : Repositories.IRepository<T> where T : class
     {
 
         ContextApp _context;
         DbSet<T> _dbSet;
-        public Repository(ContextApp context)
+        public IRepository(ContextApp context)
         {
             _context = context;
             _dbSet = _context.Set<T>();

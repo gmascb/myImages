@@ -10,7 +10,7 @@ using MyImages.Models;
 
 namespace MyImages.Services
 {
-    public class ImageService : IImageServices
+    public class ImageServices : IImageServices
     {
         public bool ValidNumberOfImagesUploaded(ImageUow ImageUow)
         {

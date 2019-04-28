@@ -12,19 +12,9 @@ namespace MyImages.Uow
     public class ImageUow : DbContext
     {
         public ContextApp context = new ContextApp();
-        public Repository<ImageModel> _repository;
+        public IRepository<ImageModel> _repository;
 
-        public Repository<ImageModel> Repository
-        {
-            get
-            {
-                if (_repository == null)
-                {
-                    _repository = new Repository<ImageModel>(context);
-                }
-                return _repository;
-            }
-        }
+        public IRepository<ImageModel> Repository { get; set; }
 
         public void Commit()
         {
