@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace MyImages.Repository
 {
-    public class IRepository<T> : Repositories.IRepository<T> where T : class
+    public class RepositoryGeneric<T> : Repositories.IRepository<T> where T : class
     {
 
         ContextApp _context;
         DbSet<T> _dbSet;
-        public IRepository(ContextApp context)
+        public RepositoryGeneric(ContextApp context)
         {
             _context = context;
             _dbSet = _context.Set<T>();

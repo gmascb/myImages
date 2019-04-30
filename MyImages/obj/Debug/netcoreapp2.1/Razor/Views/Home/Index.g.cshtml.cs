@@ -60,7 +60,7 @@ using MyImages.Models;
             WriteLiteral("\r\n<html>\r\n    ");
             EndContext();
             BeginContext(59, 21, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "387760cf344e420cab3da6b589ce30a4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "88f1493d42e745699d8d1e28f38d215d", async() => {
                 BeginContext(65, 8, true);
                 WriteLiteral("\r\n\r\n    ");
                 EndContext();
@@ -80,7 +80,7 @@ using MyImages.Models;
             WriteLiteral("\r\n\r\n    ");
             EndContext();
             BeginContext(88, 21, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "962e894a791c48968a536ff6262ea9b1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69c1c21092fd49c7bc70819154edd9a0", async() => {
                 BeginContext(94, 8, true);
                 WriteLiteral("\r\n\r\n    ");
                 EndContext();

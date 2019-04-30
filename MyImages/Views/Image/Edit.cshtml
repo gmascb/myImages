@@ -1,5 +1,11 @@
 ﻿@model MyImages.Models.ImageModel
 
+@if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"].Errors.Count > 0)
+{
+    <div class="alert alert-
+       <strong>Error!</strong> danger">@ViewData.ModelState["Error"].Errors.First().ErrorMessage
+    </div>
+}
 @{
     ViewData["Title"] = "Edit";
 }
@@ -9,7 +15,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit" method="post">
+        <form asp-action="Edit" enctype="multipart/form-data" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
@@ -23,7 +29,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Image" class="control-label"></label>
-                <input asp-for="Image" type="file" id="Image" formenctype="multipart/form-data"/> <br/>
+                <input type="file" id="files" asp-for="Image" /> <br />
                 <span asp-validation-for="Image" class="text-danger"></span>
             </div>
             <div class="form-group">

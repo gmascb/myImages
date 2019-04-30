@@ -3,7 +3,12 @@
 @{
     ViewData["Title"] = "Create";
 }
-
+@if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"].Errors.Count > 0)
+{
+    <div class="alert alert-
+       <strong>Error!</strong> danger">@ViewData.ModelState["Error"].Errors.First().ErrorMessage
+    </div>
+}
 <h2>Create</h2>
 
 <h4>ImageModel</h4>
@@ -24,7 +29,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Image" class="control-label"></label>
-                <input type="file" id="files" asp-for="Image"/> <br />
+                <input type="file" id="files" asp-for="Image" /> <br />
                 <span asp-validation-for="Image" class="text-danger"></span>
             </div>
             <div class="form-group">

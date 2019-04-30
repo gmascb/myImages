@@ -34,7 +34,7 @@ namespace MyImages.Services
 
         public bool ValidPngFile(IFormFile File)
         {
-            if (File.Length > 0)
+            if (File?.Length > 0)
             {
                 return Path.GetExtension(File.FileName).Contains(".png");
             }
@@ -53,5 +53,6 @@ namespace MyImages.Services
                 ModelOnly.Image = service.RenderImage200PX(ModelOnly.Image, 200, 200);
             }
         }
+
     }
 }

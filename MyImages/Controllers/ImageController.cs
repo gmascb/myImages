@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using MyImages.Uow;
 using MyImages.Models;
 using MyImages.Services;
+using Microsoft.AspNetCore.Http.Internal;
+using System.IO;
 
 namespace MyImages.Controllers
 {
@@ -11,7 +13,7 @@ namespace MyImages.Controllers
     {
         ImageUow _uow;
         public IImageServices _service = new ImageServices();
-            
+
 
         public ImageController()
         {
@@ -49,7 +51,7 @@ namespace MyImages.Controllers
                     {
                         _service.BuildImagesByteArray(ImageModel, Image, _service);
                         _uow.Repository.Add(ImageModel);
-                        _uow.Commit();
+                        _uow.Repository.Commit();
 
                         return RedirectToAction(nameof(Index));
                     }
@@ -69,8 +71,6 @@ namespace MyImages.Controllers
             }
         }
 
-
-
         // GET: Images/Edit/5
         public ActionResult Edit(string id)
         {
@@ -80,18 +80,25 @@ namespace MyImages.Controllers
         // POST: Images/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(string id, ImageModel image)
+        public ActionResult Edit(string id, ImageModel model, IFormFile Image)
         {
-            try
+            if (_service.ValidPngFile(Image))
             {
-
-                _uow.Repository.Edit(image);
-                _uow.Commit();
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    _service.BuildImagesByteArray(model, Image, _service);
+                    _uow.Repository.Edit(model);
+                    _uow.Repository.Commit();
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (Exception e)
+                {
+                    return View();
+                }
             }
-            catch (Exception e)
+            else
             {
-                return View();
+                return RedirectToAction(nameof(Index));
             }
         }
 
@@ -109,7 +116,7 @@ namespace MyImages.Controllers
             try
             {
                 this._uow.Repository.Remove(this._uow.Repository.FindById(id));
-                this._uow.Commit();
+                this._uow.Repository.Commit();
                 return RedirectToAction(nameof(Index));
             }
             catch
